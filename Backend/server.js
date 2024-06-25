@@ -14,16 +14,13 @@ app.use(express.static(path.join(__dirname, "./public")));
 io.on("connection", onConnected);
 
 function onConnected(socket) {
-  console.log(socket.id);
   socketsConected.add(socket.id);
   io.emit("clients-total", socketsConected.size);
   socket.on("disconnect", () => {
-    console.log("Socket disconnected", socket.id);
     socketsConected.delete(socket.id);
     io.emit("clients-total", socketsConected.size);
   });
   socket.on('message',(data)=>{
-    console.log(data);
     socket.broadcast.emit('chat-message',data)
   })
   socket.on('feedBack',(data)=>{

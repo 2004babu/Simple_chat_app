@@ -12,28 +12,28 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="container-fluid  d-flex justify-content-center row  vw-100 vh-100 bg-white overflow-hidden ">
+<body class="container-fluid  d-flex justify-content-center row  vw-100 vh-100 bg-white  overflow-md-hidden ">
     <div class="   row  d-flex justify-content-center container-sm-fluid rounded-4 ">
           <h1 class="text-center">Chat App</h1>
-        <div style="width: 100%; height: 800px;" class="  p-2 mt-1 bg-white position-sticky rounded-4  ">
-            <div class=" col-sm-1 d-flex p-1 border-1 mt-1 d-flex justify-content-start gap-4">
-                <span class=""><i class="fa-regular fa-user"></i></span>
-                <input id="user_name" type="text" class="input-field" placeholder="Enter Your Name " value="anonymouse"  data-user="babu">
+        <div style="width: 100%; height: 800px;" class="d-sm-flex row  p-2 mt-1 bg-white position-sticky rounded-4  ">
+
+            <div style="height: fit-content;" class="  d-flex p-1 border-1 mt-1  justify-content-start gap-4">
+                <span class="fs-4 row " style="height: fit-content;"><i  class="fa-regular fa-user"></i></span>
+                <input id="user_name" type="text" style="height: fit-content;"  class="input-field " placeholder="Enter Your Name " value="anonymouse"  data-user="babu">
             </div>
-            <div  style="height:600px  "   class="col-sm-6  p-3 mt-1 d-flex row gap-3  ">
+            <div  style="height:600px;  min-height:fit-content "   class="col-sm-7  p-3 mt-1 d-flex row gap-3   ">
                 <div id="message_container" class=" p-2 h-100  w-100  scroll-track overflow-y-scroll ">
                     
-                    
+                  <h4 id="total-clients">total-clients</h4>
 
                 </div>
-                
-            
         </div>
-        <form id="message_form "   class=" col-sm-5 p-3 form-gruop position-sticky d-flex align-items-center gap-2 ">
-            <input type="text" name="input_field" id="input_field" class="form-control p-2">
-            <button id="send-btn" class=" btn btn-primary " type="submit" > <i class="fa fa-paper-plane"></i></button>
+        <form id="message_Form " style="height: fit-content;"  class=" col-sm-5 p-3 form-gruop position-sticky d-flex align-items-center gap-2 ">
+          <input type="text" name="input_field" id="input_field" class="form-control p-2">
+          <button id="send-btn" class=" btn btn-primary " type="submit" > <i class="fa fa-paper-plane"></i></button>
+          
         </form>
-        <h4 id="total-clients">total-clients</h4>
+
     </div>
    <script src="/socket.io/socket.io.js"></script>
     <script src="./main.js"></script>

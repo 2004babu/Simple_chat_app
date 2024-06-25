@@ -1,10 +1,12 @@
 const socket = io();
-
+// console.log(socket);
 const total_clients = document.getElementById("total-clients");
 const message_input = document.getElementById("input_field");
 const message_container = document.getElementById("message_container");
-const message_Form = document.getElementById("message_form");
+const message_Form = document.getElementById("message_Form");
 const name_user = document.getElementById("user_name");
+
+const message_tone=new Audio('./public_message-tone.mp3')
 socket.on("clients-total", (data) => {
   message_input.focus({preventScroll:true})
   if (data) {
@@ -12,8 +14,9 @@ socket.on("clients-total", (data) => {
   }
 });
 
-message_Form.addEventListener("submit", (e) => {
+message_input.form.addEventListener("submit", (e) => {
   e.preventDefault();
+ 
   sendMessage();
 });
 
@@ -34,6 +37,7 @@ function sendMessage() {
 
 socket.on("chat-message", (data) => {
   addChat(false, data);
+  message_tone.play()
   scrollToBottom();
 });
 
