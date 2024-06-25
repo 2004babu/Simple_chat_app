@@ -1,11 +1,8 @@
-// server.js
+
 const express = require("express");
 const path = require("path");
 const app = express();
 
-// app.get('/', (req, res) => {
-//     res.send('WebSocket server is running');
-// });
 
 const server = app.listen(8080, () => {
   console.log("Server is listening on port 8080");
